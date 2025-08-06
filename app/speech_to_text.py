@@ -9,12 +9,11 @@ def transcribe_microphone_audio():
 
     # Google ile tanıma
     try:
-        text = recognizer.recognize_google(audio,language="tr-TR")  # Key parametresi ile api anahtarı eklenebilir !!!!!
-        print("Duyduğum:", text)
+        text = recognizer.recognize_google(audio, language="tr-TR")
+        return text
     except sr.UnknownValueError:
         print("Ne dediğini anlayamadım.")
+        return None
     except sr.RequestError as e:
-        print("Google'dan sonuç alınamadı:", e)
-
-if __name__ == "__main__":
-    transcribe_microphone_audio()
+        print(f"Google'dan sonuç alınamadı: {e}")
+        return None

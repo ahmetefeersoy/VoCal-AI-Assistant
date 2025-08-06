@@ -1,2 +1,5 @@
 /.env
 .env/
+temp/
+pycaches/
+__pycache__/

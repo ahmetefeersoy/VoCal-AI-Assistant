@@ -2,3 +2,14 @@ google-generativeai>=0.4.0
 
 # Environment Variables
 python-dotenv>=1.0.1
+
+# Audio Processing
+pyaudio>=0.2.11
+
+# Speech Recognition
+SpeechRecognition>=3.9.0
+
+# Text-to-Speech
+gTTS>=2.3.1
+
+
