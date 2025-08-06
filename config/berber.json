@@ -1,0 +1,29 @@
+{
+  "businessName": "Berber XYZ",
+  "location": "Kocaeli İzmit ,Business Berber Shop,Ömerağa Mahallesi, Naci Girgin Sokak, 41310 İzmit/Kocaeli",
+  "workingHours": {
+    "monday": "09:00-22:00",
+    "tuesday": "09:00-22:00",
+    "wednesday": "09:00-22:00",
+    "thursday": "09:00-22:00",
+    "friday": "09:00-22:00",
+    "saturday": "10:00-22:00",
+    "sunday": "Kapalı"
+  },
+  "services": [
+    "Saç Kesimi",
+    "Sakal Kesimi",
+    "Saç Boyama",
+    "Saç Bakımı",
+    "Saç Yıkama",
+    "Fön Çekme",
+    "Saç Düzleştirme",
+    "Sakal Bakımı",
+    "Yüz Bakımı",
+    "Kaş Alma",
+    "Perma",
+    "Çocuk Saç Kesimi",
+    "Düğün Kesimi"
+  ]
+
+}

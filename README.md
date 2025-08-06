@@ -16,7 +16,7 @@ VoCal, müşterilerin sesli komutlarla kolayca randevu almasını sağlayan yapa
 
 ## 🧱 Teknolojiler
 
-- Python veya Node.js backend  
+- Python
 - WebRTC veya benzeri teknolojilerle web tabanlı sesli iletişim  
 - Gemini NLP modeli (Google Bard API vb.)  
 - Google Calendar API  
@@ -28,9 +28,7 @@ VoCal, müşterilerin sesli komutlarla kolayca randevu almasını sağlayan yapa
 
 VoCal/
 ├── Configs/ # İşletme bazlı ayarlar (örneğin berber.json)
-├── Services/ # STT, TTS, NLP ve Takvim servisleri
-├── Models/ # Veri modelleri (Appointment, Config, vs.)
-├── app.py veya index.js # Ana backend uygulama dosyası
+├── app/ # STT, TTS, NLP ve Takvim servisleri
 ├── README.md
 
 

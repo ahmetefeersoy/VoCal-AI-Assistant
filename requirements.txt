@@ -1,0 +1,4 @@
+google-generativeai>=0.4.0
+
+# Environment Variables
+python-dotenv>=1.0.1
