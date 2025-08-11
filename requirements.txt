@@ -12,4 +12,5 @@ SpeechRecognition>=3.9.0
 # Text-to-Speech
 gTTS>=2.3.1
 
-
+# Text-to-Speech (Alternative)
+TTS>=0.15.0

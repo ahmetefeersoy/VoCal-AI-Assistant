@@ -3,3 +3,5 @@
 temp/
 pycaches/
 __pycache__/
+venv/
+/venv
