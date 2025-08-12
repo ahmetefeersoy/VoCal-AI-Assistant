@@ -45,7 +45,7 @@ def main():
                 speak("Bir hata oluştu, lütfen tekrar deneyin.")
         else:
             print("Ses algılanamadı veya bir hata oluştu.")
-            speak("Sesinizi algılayamadım, lütfen tekrar eder misiniz ?.")
+            speak("Sesinizi algılayamadım, lütfen tekrar eder misiniz ?")
 
 if __name__ == "__main__":
     main()

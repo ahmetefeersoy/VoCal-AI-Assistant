@@ -10,20 +10,17 @@
     "saturday": "10:00-22:00",
     "sunday": "Kapalı"
   },
-  "services": [
-    "Saç Kesimi",
-    "Sakal Kesimi",
-    "Saç Boyama",
-    "Saç Bakımı",
-    "Saç Yıkama",
-    "Fön Çekme",
-    "Saç Düzleştirme",
-    "Sakal Bakımı",
-    "Yüz Bakımı",
-    "Kaş Alma",
-    "Perma",
-    "Çocuk Saç Kesimi",
-    "Düğün Kesimi"
-  ]
+  "services": {
+    "Saç Kesimi":"650 TL",
+    "Sakal Kesimi":"350 TL",
+    "Saç Boyama & Röfle": "800-2000 TL",
+    "Keratin Bakımı": "1500-2500 TL",
+    "Saç Yıkama / Fön Çekme":"250 TL",
+    "Pigmentasyon":"1500 TL",
+    "Cilt Bakımı":"700-1000 TL",
+    "Kaş Tasarımı":"200 TL",
+    "Çocuk Saç Kesimi":"500 TL",
+    "Damat Traşı": "2500-3500 TL"
+  }
 
 }

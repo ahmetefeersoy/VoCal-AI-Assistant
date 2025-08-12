@@ -39,7 +39,7 @@ if hasattr(tts, "speakers") and tts.speakers:
 if hasattr(tts, "languages") and tts.languages:
     kwargs["language"] = tts.languages[0]
 
-text = "Merhaba dünya!"
+text = "Merhaba nasılsınız efendim? Benim adım Vocal Asistan. Size yardımcı olmak amacıyla burdayım? Herhangi bi sorunuz varsa şuan dinliyorum ?"
 out_path = "output.wav"
 tts.tts_to_file(text=text, file_path=out_path, **kwargs)
 os.system(f"afplay {out_path}")
