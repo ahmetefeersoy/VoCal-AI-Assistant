@@ -1,45 +1,56 @@
 from gtts import gTTS
 import os
+import torch
+torch.serialization.add_safe_globals([__import__("TTS.tts.configs.xtts_config", fromlist=["XttsConfig"]).XttsConfig])
+
 from TTS.api import TTS
+from TTS.utils.manage import ModelManager
 
-# def speak(text):
-#     # Temp klasörünü oluştur
-#     temp_folder = "temp"
-#     if not os.path.exists(temp_folder):
-#         os.makedirs(temp_folder)
-    
-#     # Ses dosyasını temp klasörüne kaydet
-#     temp_file_path = os.path.join(temp_folder, "temp.mp3")
-#     tts = gTTS(text=text, lang='tr')  # 'tr' -> Türkçe
-#     tts.save(temp_file_path)
-    
-#     # Ses dosyasını çal
-#     os.system(f"afplay {temp_file_path}")  # Mac için ses çalma komutu
-# print(TTS.list_models())
-
-# text_to_speech.py
-import os
-from TTS.api import TTS
-
-# Pick a model explicitly (recommended). Examples:
-# English single speaker: tts_models/en/ljspeech/tacotron2-DDC
-# Multispeaker English: tts_models/en/vctk/vits
-# Turkish: tts_models/tr/common-voice/glow-tts
-MODEL_NAME = "tts_models/tr/common-voice/glow-tts"
-
-# If you really want to list models (needs recent TTS version):
-# print(TTS.list_models())
-# MODEL_NAME = TTS.list_models()[0]
-
+MODEL_NAME = "tts_models/multilingual/multi-dataset/xtts_v2"
+# Alternative single-language Turkish model:
+# MODEL_NAME = "tts_models/tr/common-voice/glow-tts"
 tts = TTS(MODEL_NAME)
+# Print available speakers and languages
+print("Available speakers:", tts.speakers)
 
+# tts_instance = TTS()  
+# try:
+#     manager = ModelManager()
+#     models = manager.list_models()
+#     # Print each model entry (string or dict depending on version)
+#     if isinstance(models, (list, tuple)):
+#         for m in models:
+#             print(m)
+#     else:
+#         print(models)
+# except Exception as e:
+#     print("Model listing failed:", e)
+
+print("Available languages:", getattr(tts, "languages", None))    
 kwargs = {}
-if hasattr(tts, "speakers") and tts.speakers:
-    kwargs["speaker"] = tts.speakers[0]
-if hasattr(tts, "languages") and tts.languages:
-    kwargs["language"] = tts.languages[0]
+   
+# Prefer Turkish if supported (XTTS supports many languages including Turkish)
+langs = getattr(tts, "languages", None)
+if langs:
+    # Try exact 'tr' first, then any that starts with 'tr'
+    if "tr" in langs:
+        kwargs["language"] = "tr"
+    else:
+        tr_like = next((l for l in langs if str(l).lower().startswith("tr")), None)
+        if tr_like:
+            kwargs["language"] = tr_like
 
-text = "Merhaba nasılsınız efendim? Benim adım Vocal Asistan. Size yardımcı olmak amacıyla burdayım? Herhangi bi sorunuz varsa şuan dinliyorum ?"
-out_path = "output.wav"
-tts.tts_to_file(text=text, file_path=out_path, **kwargs)
-os.system(f"afplay {out_path}")
+# Pick a default speaker if the model exposes a speakers list
+spks = getattr(tts, "speakers", None)
+if spks:
+    kwargs["speaker"] = spks[0]
+
+
+def speak(text):
+    temp_folder = "temp"
+    if not os.path.exists(temp_folder):
+        os.makedirs(temp_folder)
+    
+    out_path = os.path.join(temp_folder, "output.wav")
+    tts.tts_to_file(text=text, file_path=out_path, **kwargs)
+    os.system(f"afplay {out_path}")

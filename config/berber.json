@@ -1,26 +1,44 @@
 {
   "businessName": "Berber XYZ",
   "location": "Kocaeli İzmit ,Business Berber Shop,Ömerağa Mahallesi, Naci Girgin Sokak, 41310 İzmit/Kocaeli",
+  "phone": "+90 537 551 32 51",
+  "berbers": [
+    {
+      "name": "Şakir",
+      "role": "Berber"
+    },
+    {
+      "name": "Celal",
+      "role": "Berber"
+    },
+    {
+      "name": "Recep",
+      "role": "Berber"
+    },
+    {
+      "name": "Enes",
+      "role": "Berber"
+    }
+  ],
   "workingHours": {
-    "monday": "09:00-22:00",
-    "tuesday": "09:00-22:00",
-    "wednesday": "09:00-22:00",
-    "thursday": "09:00-22:00",
-    "friday": "09:00-22:00",
-    "saturday": "10:00-22:00",
+    "monday": "09:00-20:00",
+    "tuesday": "09:00-20:00",
+    "wednesday": "09:00-20:00",
+    "thursday": "09:00-20:00",
+    "friday": "09:00-20:00",
+    "saturday": "10:00-20:00",
     "sunday": "Kapalı"
   },
   "services": {
-    "Saç Kesimi":"650 TL",
-    "Sakal Kesimi":"350 TL",
+    "Saç Kesimi": "650 TL",
+    "Sakal Kesimi": "350 TL",
     "Saç Boyama & Röfle": "800-2000 TL",
     "Keratin Bakımı": "1500-2500 TL",
-    "Saç Yıkama / Fön Çekme":"250 TL",
-    "Pigmentasyon":"1500 TL",
-    "Cilt Bakımı":"700-1000 TL",
-    "Kaş Tasarımı":"200 TL",
-    "Çocuk Saç Kesimi":"500 TL",
+    "Saç Yıkama / Fön Çekme": "250 TL",
+    "Pigmentasyon": "1500 TL",
+    "Cilt Bakımı": "700-1000 TL",
+    "Kaş Tasarımı": "200 TL",
+    "Çocuk Saç Kesimi": "500 TL",
     "Damat Traşı": "2500-3500 TL"
   }
-
 }
