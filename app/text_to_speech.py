@@ -9,7 +9,7 @@ from TTS.utils.manage import ModelManager
 MODEL_NAME = "tts_models/multilingual/multi-dataset/xtts_v2"
 # Alternative single-language Turkish model:
 # MODEL_NAME = "tts_models/tr/common-voice/glow-tts"
-tts = TTS(MODEL_NAME)
+tts = TTS(MODEL_NAME) 
 # Print available speakers and languages
 print("Available speakers:", tts.speakers)
 
