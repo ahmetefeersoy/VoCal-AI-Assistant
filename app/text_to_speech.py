@@ -1,14 +1,18 @@
 from gtts import gTTS
 import os
 import torch
-torch.serialization.add_safe_globals([__import__("TTS.tts.configs.xtts_config", fromlist=["XttsConfig"]).XttsConfig])
+
+
 
 from TTS.api import TTS
 from TTS.utils.manage import ModelManager
+from TTS.tts.models.xtts import XttsAudioConfig
+torch.serialization.add_safe_globals([XttsAudioConfig])
 
-MODEL_NAME = "tts_models/multilingual/multi-dataset/xtts_v2"
+
+# MODEL_NAME = "tts_models/multilingual/multi-dataset/xtts_v2"
 # Alternative single-language Turkish model:
-# MODEL_NAME = "tts_models/tr/common-voice/glow-tts"
+MODEL_NAME = "tts_models/tr/common-voice/glow-tts"
 tts = TTS(MODEL_NAME) 
 # Print available speakers and languages
 print("Available speakers:", tts.speakers)
